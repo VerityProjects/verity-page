@@ -1,0 +1,72 @@
+{
+  "skipLink": "Pular para o conteúdo principal",
+  "nav": {
+    "about": "Quem somos",
+    "whyVerity": "Por que a Verity",
+    "contact": "Contato",
+    "getInTouch": "Fale conosco",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu"
+  },
+  "hero": {
+    "tagline": "Transformamos a complexidade da IA em vantagem prática para negócios reais.",
+    "description": "Não vendemos promessas nem dashboards genéricos. Criamos soluções inteligentes sob medida que resolvem problemas concretos e geram impacto mensurável.",
+    "getInTouch": "Fale conosco",
+    "aboutUs": "Quem somos"
+  },
+  "about": {
+    "title": "Quem somos",
+    "p1": "A Verity é uma empresa de tecnologia focada em transformar a complexidade da IA em vantagem prática para negócios reais.",
+    "p2": "Não vendemos promessas, dashboards bonitos ou \"IA genérica\". Criamos soluções inteligentes sob medida, integradas à operação, que resolvem problemas concretos e geram impacto mensurável.",
+    "p3": "Acreditamos que IA não é sobre tendência — é sobre decisão melhor, processo mais eficiente e crescimento sustentável."
+  },
+  "origin": {
+    "title": "De onde vieram nossas ideias e nosso princípio",
+    "p1": "A Verity nasceu de uma constatação simples e incômoda: o discurso sobre IA no mercado está muito à frente da aplicação real dentro das empresas.",
+    "p2": "De um lado, ferramentas prontas, superficiais e pouco adaptáveis. Do outro, empresas com dores específicas, processos únicos e zero tempo para \"testar modinhas\".",
+    "principleTitle": "Nosso princípio é claro:",
+    "li1": "IA precisa servir ao negócio, não o contrário",
+    "li2": "Cada empresa tem uma lógica própria — e a tecnologia deve respeitar isso",
+    "li3": "Automação só faz sentido quando libera pessoas para decisões estratégicas, não quando cria mais ruído",
+    "p3": "Por isso, a Verity atua como parceira estratégica, não como fornecedora de software genérico."
+  },
+  "impact": {
+    "title": "O que queremos atingir e impactar",
+    "p1": "Queremos ser o elo entre estratégia, dados e execução inteligente.",
+    "listTitle": "Nosso impacto está em:",
+    "li1": "Ajudar empresas a tomarem decisões melhores, mais rápidas e baseadas em dados reais",
+    "li2": "Eliminar desperdícios operacionais com automações inteligentes e bem pensadas",
+    "li3": "Transformar IA em um ativo competitivo, não em um experimento caro",
+    "li4": "Elevar o nível de maturidade tecnológica das empresas que atendemos",
+    "thesis": "No longo prazo, a Verity existe para provar uma tese simples: IA bem aplicada não substitui negócios — ela os fortalece."
+  },
+  "whyVerity": {
+    "title": "Por que a Verity é diferente",
+    "1_title": "Não vendemos IA. Vendemos vantagem competitiva.",
+    "1_p": "Muita empresa vende ferramenta. Nós entregamos impacto operacional real. Se não melhora margem, reduz custo, acelera decisão ou aumenta performance comercial, não faz sentido existir.",
+    "2_title": "Nada genérico. Tudo sob medida.",
+    "2_p": "Ferramentas prontas resolvem problemas médios. Empresas não são médias. A Verity desenvolve soluções alinhadas à lógica do seu negócio, aos seus dados e à sua estratégia. Tecnologia adaptada à empresa — não o contrário.",
+    "3_title": "Estratégia antes de tecnologia",
+    "3_intro": "Antes de falar de modelo, algoritmo ou automação, entendemos:",
+    "3_li1": "Onde está o gargalo?",
+    "3_li2": "Onde está o desperdício?",
+    "3_li3": "Onde está a oportunidade oculta?",
+    "3_outro": "Só depois disso a IA entra.",
+    "4_title": "Integração real com a operação",
+    "4_p": "Não criamos sistemas paralelos que viram mais uma tela aberta. Nossas soluções se integram ao fluxo já existente, conversam com seus dados e trabalham dentro da realidade do seu time.",
+    "5_title": "Foco em maturidade tecnológica, não em hype",
+    "5_p": "IA não é modinha. Também não é mágica. Nosso objetivo é elevar o nível estratégico da empresa, tornando tecnologia um ativo estrutural e não uma aposta experimental.",
+    "6_title": "Parceria, não fornecedor",
+    "6_p": "Não entregamos e desaparecemos. Crescemos junto com a evolução do seu negócio, ajustando, refinando e ampliando o que for necessário."
+  },
+  "contact": {
+    "title": "Pronto para transformar IA em vantagem?",
+    "subtitle": "Fale com a Verity. Sem compromisso, sem modinha — só uma conversa estratégica.",
+    "button": "Fale conosco"
+  },
+  "footer": {
+    "tagline": "IA bem aplicada não substitui negócios — ela os fortalece.",
+    "copyright": "Todos os direitos reservados.",
+    "instagram": "Verity no Instagram"
+  }
+}
