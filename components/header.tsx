@@ -64,6 +64,7 @@ export function Header({ locale, dict }: Props) {
             >
               <Link
                 href="/en"
+                scroll={false}
                 className={cn(
                   "flex items-center gap-1.5 rounded-md px-2.5 py-1.5 transition-colors",
                   locale === "en"
@@ -78,6 +79,7 @@ export function Header({ locale, dict }: Props) {
               </Link>
               <Link
                 href="/pt"
+                scroll={false}
                 className={cn(
                   "flex items-center gap-1.5 rounded-md px-2.5 py-1.5 transition-colors",
                   locale === "pt"
@@ -111,6 +113,7 @@ export function Header({ locale, dict }: Props) {
           >
             <Link
               href="/en"
+              scroll={false}
               className={cn(
                 "flex items-center gap-1.5 rounded-md px-2.5 py-1.5 transition-colors",
                 locale === "en"
@@ -124,6 +127,7 @@ export function Header({ locale, dict }: Props) {
             </Link>
             <Link
               href="/pt"
+              scroll={false}
               className={cn(
                 "flex items-center gap-1.5 rounded-md px-2.5 py-1.5 transition-colors",
                 locale === "pt"
