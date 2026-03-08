@@ -1,51 +1,69 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import verityLogo from "@/assets/verity-logo.png";
-
-const COMING_SOON_MESSAGE = "We're still building the tool. Stay tuned!";
-
-const showComingSoon = () => {
-  toast.info(COMING_SOON_MESSAGE);
-};
+import { useLocale } from "@/contexts/LocaleContext";
 
 const navLinks = [
-  { label: "Product", href: "#product" },
-  { label: "Features", href: "#features" },
-  { label: "Methodology", href: "#methodology" },
-  { label: "Pricing", href: "#pricing" },
+  { key: "product" as const, href: "#product" },
+  { key: "features" as const, href: "#features" },
+  { key: "methodology" as const, href: "#methodology" },
+  { key: "pricing" as const, href: "#pricing" },
 ];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { locale, dict } = useLocale();
+  const navigate = useNavigate();
+
+  const showComingSoon = () => {
+    toast.info(dict.toast.comingSoon);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
       <div className="container mx-auto flex h-16 items-center justify-between px-6">
-        <a href="#" className="flex items-center gap-2">
-          <img src={verityLogo} alt="Verity" className="h-12" />
-        </a>
+        <Link to={locale === "pt" ? "/pt" : "/"} className="flex items-center gap-2">
+          <img src="/logo-default-no-bg.svg" alt="Verity" className="h-12 w-auto" />
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
-              key={link.label}
+              key={link.key}
               href={link.href}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              {link.label}
+              {dict.nav[link.key]}
             </a>
           ))}
         </div>
 
         <div className="hidden md:flex items-center gap-3">
+          <span className="flex items-center gap-2 text-sm text-muted-foreground">
+            <button
+              type="button"
+              onClick={() => navigate("/")}
+              className={locale === "en" ? "text-foreground font-medium" : "hover:text-foreground transition-colors"}
+            >
+              EN
+            </button>
+            <span aria-hidden>|</span>
+            <button
+              type="button"
+              onClick={() => navigate("/pt")}
+              className={locale === "pt" ? "text-foreground font-medium" : "hover:text-foreground transition-colors"}
+            >
+              PT
+            </button>
+          </span>
           <Button variant="ghost" size="sm" onClick={showComingSoon}>
-            Log in
+            {dict.nav.login}
           </Button>
           <Button variant="hero" size="sm" onClick={showComingSoon}>
-            Get Started
+            {dict.nav.getStarted}
           </Button>
         </div>
 
@@ -66,18 +84,35 @@ const Navbar = () => {
             className="md:hidden border-t border-border bg-background"
           >
             <div className="flex flex-col gap-4 p-6">
+              <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                <button
+                  type="button"
+                  onClick={() => { navigate("/"); setMobileOpen(false); }}
+                  className={locale === "en" ? "text-foreground font-medium" : ""}
+                >
+                  EN
+                </button>
+                <span>|</span>
+                <button
+                  type="button"
+                  onClick={() => { navigate("/pt"); setMobileOpen(false); }}
+                  className={locale === "pt" ? "text-foreground font-medium" : ""}
+                >
+                  PT
+                </button>
+              </span>
               {navLinks.map((link) => (
                 <a
-                  key={link.label}
+                  key={link.key}
                   href={link.href}
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
-                  {link.label}
+                  {dict.nav[link.key]}
                 </a>
               ))}
               <Button variant="hero" className="mt-2" onClick={() => { showComingSoon(); setMobileOpen(false); }}>
-                Get Started
+                {dict.nav.getStarted}
               </Button>
             </div>
           </motion.div>

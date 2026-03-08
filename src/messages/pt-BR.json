@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "product": "Produto",
+    "features": "Funcionalidades",
+    "methodology": "Metodologia",
+    "pricing": "Preços",
+    "login": "Entrar",
+    "getStarted": "Começar"
+  },
+  "hero": {
+    "badge": "Conheça a Verity AI",
+    "title1": "O sistema",
+    "title2": "nervoso financeiro",
+    "title3": "da sua empresa",
+    "subtitle": "Inteligência de fluxo de caixa com IA que prevê crises financeiras antes que aconteçam. Clareza, não achismo.",
+    "startTrial": "Teste grátis",
+    "watchDemo": "Ver demonstração",
+    "dashboardAlt": "Dashboard Verity - Análise de fluxo de caixa e saúde financeira"
+  },
+  "features": {
+    "sectionTitle": "Feito para",
+    "sectionTitleHighlight": "clareza financeira",
+    "sectionSubtitle": "Cada decisão baseada em dados, totalmente explicada e pensada para proteger seu negócio.",
+    "items": [
+      { "title": "Previsão de crise de caixa", "description": "Saiba quando o caixa aperta antes que aconteça. Nossa IA analisa padrões que antecedem crises financeiras em até 60 dias." },
+      { "title": "Inteligência comportamental", "description": "Não só rastreamos números — aprendemos como as empresas reagem a eles. Dados econômicos comportamentais que ninguém mais tem." },
+      { "title": "Conservadorismo radical", "description": "Sempre cenários pessimistas primeiro. Nunca vendemos sonhos — mostramos o que acontece se tudo der errado." },
+      { "title": "Total explicabilidade", "description": "Sem caixas pretas. Cada insight é rastreável e auditável. Você vê exatamente por que a IA chegou àquela conclusão." },
+      { "title": "Simulação de cenários", "description": "Explore cenários e se instantaneamente. Decisões informadas com caminhos claros, não ordens." },
+      { "title": "Integração profunda", "description": "Conecte contabilidade, folha, pagamentos, CRM e operações. Trocar vira impossível — nos tornamos infraestrutura." }
+    ]
+  },
+  "methodology": {
+    "sectionTitle": "Nossa",
+    "sectionTitleHighlight": "metodologia",
+    "sectionSubtitle": "Não estamos construindo um produto de IA. Estamos construindo o sistema nervoso financeiro das empresas.",
+    "pillars": [
+      { "number": "01", "title": "Gestão de caixa na incerteza", "description": "A decisão mais crítica de qualquer empresa: 'Quanto tempo sobrevivo se as coisas piorarem?' Prevemos quando o caixa aperta, explicamos o porquê e mostramos o que fazer — com cenários, não ordens." },
+      { "number": "02", "title": "Dados que ninguém mais tem", "description": "Além de receita e despesas, capturamos o que as empresas perguntaram, temeram, simularam e fizeram depois. Isso gera inteligência econômica comportamental — um conjunto de dados quase impossível de replicar." },
+      { "number": "03", "title": "Confiança pela transparência", "description": "Conservadores por padrão. Totalmente explicáveis. Limites claros. Mostramos cenários pessimistas primeiro, nunca nos escondemos atrás de 'a IA decidiu' e sempre dizemos o que fazemos — e o que não fazemos." },
+      { "number": "04", "title": "De software a infraestrutura", "description": "Bancos usam nossos scores para crédito. Seguradoras para precificação. Investidores para due diligence. Não vendemos software — vendemos verdade econômica. Em 5 anos, replicar isso custa bilhões." }
+    ]
+  },
+  "cta": {
+    "title": "Clareza antes da crise",
+    "subtitle": "Comece a entender seu fluxo de caixa como nunca. Sem achismo, sem caixas pretas — só verdade financeira.",
+    "startTrial": "Teste grátis",
+    "talkToSales": "Falar com vendas"
+  },
+  "footer": {
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "contact": "Contato",
+    "copyright": "© 2026 Verity. Todos os direitos reservados."
+  },
+  "toast": {
+    "comingSoon": "Ainda estamos desenvolvendo a ferramenta. Em breve!"
+  }
+}
