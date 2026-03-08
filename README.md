@@ -1,39 +1,47 @@
 # Verity — Landing Page
 
-Landing page for [Verity](https://www.instagram.com/verity.ia/), built with Next.js 15, TypeScript, Tailwind CSS, and shadcn/ui.
+Landing page da **Verity**, empresa de tecnologia que desenvolve soluções de IA para fluxo de caixa e inteligência financeira. O site apresenta o produto (VerityMind AI), funcionalidades, metodologia e formas de contato.
 
-## Run locally
+## O que é este projeto
+
+- **Site institucional** em página única (single-page) com seções: Product, Features, Methodology e Pricing.
+- **Contato:** botões "Start Free Trial" e "Talk to Sales" abrem o e-mail `contact.verityia@gmail.com`; a seção de Pricing também direciona para esse contato.
+- **Navbar** com links de navegação (scroll suave), Log in e Get Started (exibem toast informando que a ferramenta está em desenvolvimento).
+- **Stack:** Vite, React, TypeScript, Tailwind CSS e shadcn/ui (componentes UI).
+
+## Como rodar localmente
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Abre em [http://localhost:8080](http://localhost:8080).
 
-## Build
+## Build e preview
 
 ```bash
 npm run build
-npm start
+npm run preview
 ```
 
-## Deploy on Vercel
+O build gera a pasta **`dist/`**, usada no deploy.
 
-1. Push the repo to GitHub/GitLab/Bitbucket and [import the project in Vercel](https://vercel.com/new).
-2. (Recomendado) Add an environment variable:
-   - **Name:** `NEXT_PUBLIC_SITE_URL`
-   - **Value:** sua URL em produção (ex.: `https://verity-page.vercel.app` ou o domínio customizado, ex. `https://verity.com`)
-   - Usada em: Open Graph, Twitter Cards, `robots.txt` e sitemap.
-3. Deploy. O build usa `next build` automaticamente.
+## Deploy (Vercel)
 
-## Environment (optional)
+- **Framework Preset:** Vite  
+- **Build Command:** `npm run build`  
+- **Output Directory:** `dist`
 
-- **`NEXT_PUBLIC_SITE_URL`** — Full site URL (e.g. `https://verity.com`) for Open Graph, Twitter Cards, `robots.txt`, and sitemap. If not set, `https://verity.com` is used.
+## Estrutura principal
 
-## Project structure
+- `src/pages/Index.tsx` — Página principal (monta as seções)
+- `src/components/` — Navbar, HeroSection, FeaturesSection, MethodologySection, CTASection, Footer
+- `src/components/ui/` — Componentes shadcn (Button, Toast/Sonner, Tooltip)
+- `public/` — Favicon (`verity-icon.svg`), logos, `robots.txt`
+- `src/assets/` — Logo e imagem do dashboard usados no site
 
-- `app/` — Next.js App Router (layout, page, globals)
-- `components/` — Header, Footer, shadcn UI components
-- `lib/` — Utilities (e.g. `cn`)
-- `public/` — Logos and static assets
+## Contato
+
+E-mail: **contact.verityia@gmail.com**  
+Instagram: [@verity.ia](https://www.instagram.com/verity.ia/)
