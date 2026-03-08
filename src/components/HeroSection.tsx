@@ -2,10 +2,13 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import dashboardImg from "@/assets/verity-dashboard.jpeg";
+import { useLocale } from "@/contexts/LocaleContext";
 
 const HeroSection = () => {
+  const { dict } = useLocale();
+
   return (
-    <section id="product" className="relative pt-32 pb-20 overflow-hidden hero-gradient">
+    <section id="product" className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 overflow-hidden hero-gradient">
       <div className="container mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -14,20 +17,20 @@ const HeroSection = () => {
           className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm text-primary mb-8"
         >
           <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
-          Introducing Verity AI
+          {dict.hero.badge}
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold font-display tracking-tight leading-[0.95] mb-6"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-display tracking-tight leading-[0.95] mb-6"
         >
-          The Financial
+          {dict.hero.title1}
           <br />
-          <span className="text-gradient">Nervous System</span>
+          <span className="text-gradient">{dict.hero.title2}</span>
           <br />
-          for Your Business
+          {dict.hero.title3}
         </motion.h1>
 
         <motion.p
@@ -36,8 +39,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.25 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
         >
-          AI-powered cash flow intelligence that predicts financial crises before they happen.
-          Clarity, not guesswork.
+          {dict.hero.subtitle}
         </motion.p>
 
         <motion.div
@@ -46,12 +48,16 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.35 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Button variant="hero" size="lg" className="text-base px-8 py-6">
-            Start Free Trial
-            <ArrowRight className="ml-1" size={18} />
+          <Button variant="hero" size="lg" className="text-base px-8 py-6" asChild>
+            <a href="mailto:contact.verityia@gmail.com?subject=Verity - Start Free Trial">
+              {dict.hero.startTrial}
+              <ArrowRight className="ml-1" size={18} />
+            </a>
           </Button>
-          <Button variant="hero-outline" size="lg" className="text-base px-8 py-6">
-            Watch Demo
+          <Button variant="hero-outline" size="lg" className="text-base px-8 py-6" asChild>
+            <a href="mailto:contact.verityia@gmail.com?subject=Verity - Watch Demo">
+              {dict.hero.watchDemo}
+            </a>
           </Button>
         </motion.div>
 
@@ -64,11 +70,10 @@ const HeroSection = () => {
           <div className="rounded-xl border border-border overflow-hidden glow-green-subtle">
             <img
               src={dashboardImg}
-              alt="VerityMind Dashboard - Cash flow analytics and financial health monitoring"
+              alt={dict.hero.dashboardAlt}
               className="w-full"
             />
           </div>
-          {/* Gradient fade at bottom */}
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
         </motion.div>
       </div>

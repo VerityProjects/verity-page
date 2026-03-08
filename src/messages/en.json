@@ -1,0 +1,61 @@
+{
+  "nav": {
+    "product": "Product",
+    "features": "Features",
+    "methodology": "Methodology",
+    "pricing": "Pricing",
+    "login": "Log in",
+    "getStarted": "Get Started",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
+  },
+  "hero": {
+    "badge": "Introducing VerityMind AI",
+    "title1": "The Financial",
+    "title2": "Nervous System",
+    "title3": "for Your Business",
+    "subtitle": "AI-powered cash flow intelligence that predicts financial crises before they happen. Clarity, not guesswork.",
+    "startTrial": "Start Free Trial",
+    "watchDemo": "Watch Demo",
+    "dashboardAlt": "Verity Dashboard - Cash flow analytics and financial health monitoring"
+  },
+  "features": {
+    "sectionTitle": "Built for",
+    "sectionTitleHighlight": "Financial Clarity",
+    "sectionSubtitle": "Every decision powered by data, explained in full, and designed to protect your business.",
+    "items": [
+      { "title": "Cash Crisis Prediction", "description": "Know when cash tightens before it happens. Our AI analyzes patterns that precede financial crises by up to 60 days." },
+      { "title": "Behavioral Intelligence", "description": "We don't just track numbers — we learn how companies react to them. Unique behavioral economic data no one else has." },
+      { "title": "Radical Conservatism", "description": "Always pessimistic scenarios first. We never sell dreams — we show what happens if everything goes wrong." },
+      { "title": "Full Explainability", "description": "No black boxes. Every insight is traceable and auditable. You see exactly why the AI reached its conclusion." },
+      { "title": "Scenario Simulation", "description": "Explore what-if scenarios instantly. Make informed decisions with clear paths, not orders." },
+      { "title": "Deep Integration", "description": "Connect accounting, payroll, payments, CRM, and operations. Switching becomes impossible — we become infrastructure." }
+    ]
+  },
+  "methodology": {
+    "sectionTitle": "Our",
+    "sectionTitleHighlight": "Methodology",
+    "sectionSubtitle": "We're not building an AI product. We're building the financial nervous system of companies.",
+    "pillars": [
+      { "number": "01", "title": "Cash Management Under Uncertainty", "description": "The most critical decision any company makes: 'How long do I survive if things get worse?' We predict when cash tightens, explain why, and show what to do — with scenarios, not orders." },
+      { "number": "02", "title": "Data Nobody Else Has", "description": "Beyond revenue and expenses, we capture what companies asked, feared, simulated, and did after. This creates behavioral economic intelligence — a dataset nearly impossible to replicate." },
+      { "number": "03", "title": "Trust Through Transparency", "description": "Conservative by default. Fully explainable. Clear boundaries. We show pessimistic scenarios first, never hide behind 'the AI decided', and always state what we do — and what we don't." },
+      { "number": "04", "title": "From Software to Infrastructure", "description": "Banks use our scores for credit. Insurers for pricing. Investors for due diligence. We don't sell software — we sell economic truth. In 5 years, replicating this costs billions." }
+    ]
+  },
+  "cta": {
+    "title": "Clarity before the crisis",
+    "subtitle": "Start understanding your cash flow like never before. No guesswork, no black boxes — just financial truth.",
+    "startTrial": "Start Free Trial",
+    "talkToSales": "Talk to Sales"
+  },
+  "footer": {
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "contact": "Contact",
+    "copyright": "© 2026 Verity. All rights reserved."
+  },
+  "toast": {
+    "comingSoon": "We're still building the tool. Stay tuned!"
+  }
+}
