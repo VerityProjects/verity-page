@@ -5,10 +5,12 @@
     "methodology": "Methodology",
     "pricing": "Pricing",
     "login": "Log in",
-    "getStarted": "Get Started"
+    "getStarted": "Get Started",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
   },
   "hero": {
-    "badge": "Introducing Verity AI",
+    "badge": "Introducing VerityMind AI",
     "title1": "The Financial",
     "title2": "Nervous System",
     "title3": "for Your Business",

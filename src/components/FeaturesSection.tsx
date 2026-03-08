@@ -8,15 +8,15 @@ const FeaturesSection = () => {
   const { dict } = useLocale();
 
   return (
-    <section id="features" className="py-24">
+    <section id="features" className="py-16 md:py-24">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-display mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display mb-4">
             {dict.features.sectionTitle}{" "}
             <span className="text-gradient">{dict.features.sectionTitleHighlight}</span>
           </h2>
@@ -35,7 +35,7 @@ const FeaturesSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="rounded-xl border border-border bg-card p-8 card-hover group"
+                className="rounded-xl border border-border bg-card p-6 md:p-8 card-hover group"
               >
                 <div className="mb-4 inline-flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
                   <Icon size={24} />

@@ -5,10 +5,12 @@
     "methodology": "Metodologia",
     "pricing": "Preços",
     "login": "Entrar",
-    "getStarted": "Começar"
+    "getStarted": "Começar",
+    "menuOpen": "Abrir menu",
+    "menuClose": "Fechar menu"
   },
   "hero": {
-    "badge": "Conheça a Verity AI",
+    "badge": "Conheça a VerityMind AI",
     "title1": "O sistema",
     "title2": "nervoso financeiro",
     "title3": "da sua empresa",

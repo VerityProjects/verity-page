@@ -5,15 +5,15 @@ const MethodologySection = () => {
   const { dict } = useLocale();
 
   return (
-    <section id="methodology" className="py-24 border-t border-border">
+    <section id="methodology" className="py-16 md:py-24 border-t border-border">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-display mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-display mb-4">
             {dict.methodology.sectionTitle}{" "}
             <span className="text-gradient">{dict.methodology.sectionTitleHighlight}</span>
           </h2>
@@ -30,7 +30,7 @@ const MethodologySection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="rounded-xl border border-border bg-card p-8 card-hover relative overflow-hidden"
+              className="rounded-xl border border-border bg-card p-6 md:p-8 card-hover relative overflow-hidden"
             >
               <span className="absolute top-6 right-6 text-6xl font-bold font-display text-primary/10">
                 {pillar.number}

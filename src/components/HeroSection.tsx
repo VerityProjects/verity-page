@@ -8,7 +8,7 @@ const HeroSection = () => {
   const { dict } = useLocale();
 
   return (
-    <section id="product" className="relative pt-32 pb-20 overflow-hidden hero-gradient">
+    <section id="product" className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 overflow-hidden hero-gradient">
       <div className="container mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -24,7 +24,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold font-display tracking-tight leading-[0.95] mb-6"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-display tracking-tight leading-[0.95] mb-6"
         >
           {dict.hero.title1}
           <br />
