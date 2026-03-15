@@ -54,6 +54,45 @@
     --surface-elevated: 0 0% 8%;
     --text-secondary: 0 0% 55%;
   }
+
+  :root[data-theme="light"] {
+    --background: 0 0% 99%;
+    --foreground: 220 26% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 12%;
+
+    --primary: 142 71% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 33% 96%;
+    --secondary-foreground: 220 26% 12%;
+
+    --muted: 210 33% 96%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 142 50% 93%;
+    --accent-foreground: 142 71% 22%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 142 71% 36%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 26% 12%;
+    --sidebar-primary: 142 71% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 33% 96%;
+    --sidebar-accent-foreground: 220 26% 12%;
+    --sidebar-border: 214 20% 88%;
+    --sidebar-ring: 142 71% 36%;
+
+    --surface-elevated: 210 33% 97%;
+    --text-secondary: 220 10% 40%;
+  }
 }
 
 @layer base {
@@ -89,6 +128,10 @@
 
   .hero-gradient {
     background: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--primary) / 0.15), transparent);
+  }
+
+  .hero-image-shadow {
+    box-shadow: 0 30px 80px -40px hsl(220 26% 12% / 0.4);
   }
 
   .card-hover {
