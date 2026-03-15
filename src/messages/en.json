@@ -9,6 +9,10 @@
     "menuOpen": "Open menu",
     "menuClose": "Close menu"
   },
+  "theme": {
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
+  },
   "hero": {
     "badge": "Introducing VerityMind AI",
     "title1": "The Financial",

@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import dashboardImg from "@/assets/verity-dashboard.jpeg";
+import dashboardDarkImg from "@/assets/verity-home-dark.png";
+import dashboardLightImg from "@/assets/verity-home-white.png";
 import { useLocale } from "@/contexts/LocaleContext";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const HeroSection = () => {
   const { dict } = useLocale();
+  const { theme } = useTheme();
+  const dashboardImg = theme === "light" ? dashboardLightImg : dashboardDarkImg;
 
   return (
     <section id="product" className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 overflow-hidden hero-gradient">
@@ -67,7 +71,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-20 relative"
         >
-          <div className="rounded-xl border border-border overflow-hidden glow-green-subtle">
+          <div className="rounded-xl border border-border overflow-hidden glow-green-subtle hero-image-shadow bg-card">
             <img
               src={dashboardImg}
               alt={dict.hero.dashboardAlt}

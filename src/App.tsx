@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { LocaleProvider } from "@/contexts/LocaleContext";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 import LocaleRedirect from "./components/LocaleRedirect";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -15,17 +16,19 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <LocaleProvider>
-          <LocaleRedirect />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/pt" element={<Index />} />
-            <Route path="/en" element={<Navigate to="/" replace />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </LocaleProvider>
-      </BrowserRouter>
+      <ThemeProvider>
+        <BrowserRouter>
+          <LocaleProvider>
+            <LocaleRedirect />
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/pt" element={<Index />} />
+              <Route path="/en" element={<Navigate to="/" replace />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </LocaleProvider>
+        </BrowserRouter>
+      </ThemeProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

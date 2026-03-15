@@ -2,9 +2,10 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { Menu, X, LayoutDashboard, Sparkles, BookOpen, CreditCard } from "lucide-react";
+import { Menu, X, LayoutDashboard, Sparkles, BookOpen, CreditCard, Moon, Sun } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocale } from "@/contexts/LocaleContext";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const iconSize = 16;
 
@@ -18,7 +19,11 @@ const navLinks = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { locale, dict } = useLocale();
+  const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
+  const isLightTheme = theme === "light";
+  const themeLabel = isLightTheme ? dict.theme.switchToDark : dict.theme.switchToLight;
+  const logoSrc = isLightTheme ? "/logo-default-no-bg.svg" : "/logo-white-no-bg.svg";
 
   const showComingSoon = () => {
     toast.info(dict.toast.comingSoon);
@@ -28,7 +33,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl pt-[env(safe-area-inset-top)]">
       <div className="container mx-auto flex h-16 items-center justify-between px-6">
         <Link to={locale === "pt" ? "/pt" : "/"} className="flex items-center gap-2">
-          <img src="/logo-default-no-bg.svg" alt="Verity" className="h-12 w-auto" />
+          <img src={logoSrc} alt="Verity" className="h-12 w-auto" />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -48,6 +53,15 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+            aria-label={themeLabel}
+            title={themeLabel}
+          >
+            {isLightTheme ? <Moon size={18} /> : <Sun size={18} />}
+          </Button>
           <span className="flex items-center gap-2 text-sm text-muted-foreground">
             <button
               type="button"
@@ -98,6 +112,14 @@ const Navbar = () => {
             className="md:hidden border-t border-border bg-background"
           >
             <div className="flex flex-col gap-1 p-6">
+              <Button
+                variant="ghost"
+                className="justify-start min-h-[44px] touch-manipulation"
+                onClick={toggleTheme}
+              >
+                {isLightTheme ? <Moon size={18} /> : <Sun size={18} />}
+                {themeLabel}
+              </Button>
               <span className="flex items-center gap-2 text-sm text-muted-foreground min-h-[44px]">
                 <button
                   type="button"

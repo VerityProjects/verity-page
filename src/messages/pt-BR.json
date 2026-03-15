@@ -9,6 +9,10 @@
     "menuOpen": "Abrir menu",
     "menuClose": "Fechar menu"
   },
+  "theme": {
+    "switchToLight": "Mudar para tema claro",
+    "switchToDark": "Mudar para tema escuro"
+  },
   "hero": {
     "badge": "Conheça a VerityMind AI",
     "title1": "O sistema",
