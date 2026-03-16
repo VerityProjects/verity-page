@@ -2,14 +2,23 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import dashboardDarkImg from "@/assets/verity-home-dark.png";
+import dashboardDarkEnImg from "@/assets/verity-home-dark-en.png";
 import dashboardLightImg from "@/assets/verity-home-white.png";
+import dashboardLightEnImg from "@/assets/verity-home-white-en.png";
 import { useLocale } from "@/contexts/LocaleContext";
 import { useTheme } from "@/contexts/ThemeContext";
 
 const HeroSection = () => {
-  const { dict } = useLocale();
+  const { locale, dict } = useLocale();
   const { theme } = useTheme();
-  const dashboardImg = theme === "light" ? dashboardLightImg : dashboardDarkImg;
+  const dashboardImg =
+    locale === "en"
+      ? theme === "light"
+        ? dashboardLightEnImg
+        : dashboardDarkEnImg
+      : theme === "light"
+        ? dashboardLightImg
+        : dashboardDarkImg;
 
   return (
     <section id="product" className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 overflow-hidden hero-gradient">
