@@ -23,7 +23,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const isLightTheme = theme === "light";
   const themeLabel = isLightTheme ? dict.theme.switchToDark : dict.theme.switchToLight;
-  const logoSrc = isLightTheme ? "/logo-default-no-bg.svg" : "/logo-white-no-bg.svg";
+  const logoSrc = isLightTheme ? "/logo-white-no-bg.svg" : "/logo-default-no-bg.svg";
 
   const showComingSoon = () => {
     toast.info(dict.toast.comingSoon);
