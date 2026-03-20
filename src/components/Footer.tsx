@@ -5,7 +5,7 @@ import { useTheme } from "@/contexts/ThemeContext";
 const Footer = () => {
   const { locale, dict } = useLocale();
   const { theme } = useTheme();
-  const logoSrc = theme === "light" ? "/logo-default-no-bg.svg" : "/logo-white-no-bg.svg";
+  const logoSrc = theme === "light" ? "/logo-white-no-bg.svg" : "/logo-default-no-bg.svg";
 
   return (
     <footer className="border-t border-border py-12">
