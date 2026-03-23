@@ -6,6 +6,7 @@ import { Menu, X, LayoutDashboard, Sparkles, BookOpen, CreditCard, Moon, Sun } f
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocale } from "@/contexts/LocaleContext";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useTransition } from "@/contexts/TransitionContext";
 
 const iconSize = 16;
 
@@ -20,6 +21,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { locale, dict } = useLocale();
   const { theme, toggleTheme } = useTheme();
+  const { runTransition } = useTransition();
   const navigate = useNavigate();
   const isLightTheme = theme === "light";
   const themeLabel = isLightTheme ? dict.theme.switchToDark : dict.theme.switchToLight;
@@ -27,6 +29,25 @@ const Navbar = () => {
 
   const showComingSoon = () => {
     toast.info(dict.toast.comingSoon);
+  };
+
+  const scrollToSection = (href: string, closeMobileMenu = false) => {
+    runTransition(() => {
+      const section = document.querySelector(href);
+      if (section instanceof HTMLElement) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      if (closeMobileMenu) {
+        setMobileOpen(false);
+      }
+    });
+  };
+
+  const handleThemeToggle = () => {
+    runTransition(() => {
+      toggleTheme();
+    });
   };
 
   return (
@@ -44,6 +65,10 @@ const Navbar = () => {
                 key={link.key}
                 href={link.href}
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                onClick={(event) => {
+                  event.preventDefault();
+                  scrollToSection(link.href);
+                }}
               >
                 <Icon size={iconSize} strokeWidth={1.5} className="shrink-0" />
                 {dict.nav[link.key]}
@@ -56,7 +81,7 @@ const Navbar = () => {
           <Button
             variant="ghost"
             size="icon"
-            onClick={toggleTheme}
+            onClick={handleThemeToggle}
             aria-label={themeLabel}
             title={themeLabel}
           >
@@ -115,7 +140,7 @@ const Navbar = () => {
               <Button
                 variant="ghost"
                 className="justify-start min-h-[44px] touch-manipulation"
-                onClick={toggleTheme}
+                onClick={handleThemeToggle}
               >
                 {isLightTheme ? <Moon size={18} /> : <Sun size={18} />}
                 {themeLabel}
@@ -144,7 +169,10 @@ const Navbar = () => {
                     key={link.key}
                     href={link.href}
                     className="flex items-center gap-3 min-h-[44px] py-3 text-muted-foreground hover:text-foreground transition-colors touch-manipulation"
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      scrollToSection(link.href, true);
+                    }}
                   >
                     <Icon size={iconSize} strokeWidth={1.5} className="shrink-0" />
                     {dict.nav[link.key]}

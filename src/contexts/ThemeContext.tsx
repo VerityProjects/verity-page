@@ -14,6 +14,8 @@ type ThemeContextValue = {
 };
 
 const THEME_STORAGE_KEY = "verity-theme";
+const THEME_ANIMATION_CLASS = "theme-animating";
+const THEME_ANIMATION_DURATION_MS = 650;
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
@@ -35,7 +37,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }, [theme]);
 
   const toggleTheme = () => {
+    document.documentElement.classList.add(THEME_ANIMATION_CLASS);
+
     setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"));
+
+    window.setTimeout(() => {
+      document.documentElement.classList.remove(THEME_ANIMATION_CLASS);
+    }, THEME_ANIMATION_DURATION_MS);
   };
 
   return (

@@ -1,0 +1,66 @@
+name: Discord Merge Notify
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  notify-discord:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send merge notification to Discord
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          REPOSITORY: ${{ github.repository }}
+          REPOSITORY_NAME: ${{ github.event.repository.name }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          BASE_BRANCH: ${{ github.event.pull_request.base.ref }}
+          HEAD_BRANCH: ${{ github.event.pull_request.head.ref }}
+          MERGED_BY: ${{ github.event.pull_request.merged_by.login }}
+          AUTHOR: ${{ github.event.pull_request.user.login }}
+          MERGE_COMMIT_SHA: ${{ github.event.pull_request.merge_commit_sha }}
+        run: |
+          if [ -z "$DISCORD_WEBHOOK" ]; then
+            echo "Secret DISCORD_WEBHOOK is not configured."
+            exit 1
+          fi
+
+          python3 <<'PY' > payload.json
+          import json
+          import os
+
+          repository = os.environ["REPOSITORY"]
+          repository_name = os.environ["REPOSITORY_NAME"]
+          pr_number = os.environ["PR_NUMBER"]
+          pr_title = os.environ["PR_TITLE"]
+          pr_url = os.environ["PR_URL"]
+          base_branch = os.environ["BASE_BRANCH"]
+          head_branch = os.environ["HEAD_BRANCH"]
+          merged_by = os.environ["MERGED_BY"]
+          author = os.environ["AUTHOR"]
+          merge_commit_sha = os.environ.get("MERGE_COMMIT_SHA") or ""
+
+          short_sha = merge_commit_sha[:7] if merge_commit_sha else "n/a"
+          content = (
+              f"### Merge realizado em `{repository_name}`\n"
+              f"**PR:** #{pr_number} - {pr_title}\n"
+              f"**Repositorio:** {repository}\n"
+              f"**Origem:** `{head_branch}` -> `{base_branch}`\n"
+              f"**Autor do PR:** @{author}\n"
+              f"**Merge por:** @{merged_by}\n"
+              f"**Commit:** `{short_sha}`\n"
+              f"**Link:** {pr_url}"
+          )
+
+          print(json.dumps({"content": content}))
+          PY
+
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            --data @payload.json \
+            "$DISCORD_WEBHOOK"

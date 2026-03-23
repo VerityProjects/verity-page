@@ -111,6 +111,37 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
   }
+
+  :root.theme-animating body,
+  :root.theme-animating nav,
+  :root.theme-animating section,
+  :root.theme-animating footer,
+  :root.theme-animating div,
+  :root.theme-animating span,
+  :root.theme-animating p,
+  :root.theme-animating h1,
+  :root.theme-animating h2,
+  :root.theme-animating h3,
+  :root.theme-animating h4,
+  :root.theme-animating h5,
+  :root.theme-animating h6,
+  :root.theme-animating a,
+  :root.theme-animating button,
+  :root.theme-animating img,
+  :root.theme-animating svg,
+  :root.theme-animating path,
+  :root.theme-animating *::before,
+  :root.theme-animating *::after {
+    transition:
+      background-color 0.55s ease,
+      color 0.55s ease,
+      border-color 0.55s ease,
+      fill 0.55s ease,
+      stroke 0.55s ease,
+      box-shadow 0.55s ease,
+      opacity 0.55s ease,
+      background-image 0.55s ease;
+  }
 }
 
 @layer utilities {
@@ -132,6 +163,22 @@
 
   .hero-image-shadow {
     box-shadow: 0 30px 80px -40px hsl(220 26% 12% / 0.4);
+  }
+
+  .section-glow {
+    position: relative;
+  }
+
+  .section-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 50%;
+    width: min(32rem, 80vw);
+    height: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.8), transparent);
+    opacity: 0.75;
+    pointer-events: none;
   }
 
   .card-hover {
